@@ -1,4 +1,5 @@
 def gitClone(){
+    git 'https://github.com/shazforiot/HelloWorld-Springboot-App.git' 
     echo "Cloning completed"
 }
 def mavenTest(){
@@ -18,3 +19,4 @@ def runContainer(){
     sh 'docker run -d thetips4you/springboot' 
     echo "Running an image inside of a container"       
 }
+return this
