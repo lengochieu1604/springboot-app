@@ -6,6 +6,7 @@ pipeline{
         stage('Init'){
             steps{
                 script{
+                    git 'https://github.com/shazforiot/HelloWorld-Springboot-App.git' 
                     gv = load "script.groovy" 
                 }
             }
