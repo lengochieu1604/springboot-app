@@ -19,7 +19,7 @@ pipeline{
         }  
         stage('Maven test'){
             steps{
-                cript{
+                script{
                     gv.mavenTest()
                 }
             }
