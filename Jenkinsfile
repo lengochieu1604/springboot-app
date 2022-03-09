@@ -5,32 +5,44 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-                gv = load 'script.groovy'
+                script {
+                    gv = load 'script.groovy'
+                }
             }
         }
         stage('Git clone') {
             steps {
-                gv.gitClone()
+                script {
+                    gv.gitClone()
+                }
             }
         }
         stage('Maven test') {
             steps {
-                gv.mavenTest()
+                script {
+                    gv.mavenTest()
+                }
             }
         }
         stage('Maven build') {
             steps {
-                gv.mavenBuild()
+                script {
+                    gv.mavenBuild()
+                }
             }
         }
         stage('Create Dockerimage') {
             steps {
-                gv.createDockerimage()
+                script {
+                    gv.createDockerimage()
+                }
             }
         }
         stage('Run container') {
             steps {
-                gv.runContainer()
+                script {
+                    gv.runContainer()
+                }
             }
         }
     }
