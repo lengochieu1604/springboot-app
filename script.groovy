@@ -1,5 +1,4 @@
 def gitClone(){
-    #git 'https://github.com/shazforiot/HelloWorld-Springboot-App.git' 
     echo "Cloning completed"
 }
 def mavenTest(){
