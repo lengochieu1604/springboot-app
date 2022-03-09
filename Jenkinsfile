@@ -1,50 +1,38 @@
 def gv
 
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Init'){
-            steps{
-                script{
-                    gv = load "script.groovy" 
-                }
+    stages {
+        stage('Init') {
+            steps {
+                gv = load 'script.groovy'
             }
         }
-        stage('Git clone'){
-            steps{ 
-                script{
-                    gv.gitClone()
-                }
-            }
-        }  
-        stage('Maven test'){
-            steps{
-                script{
-                    gv.mavenTest()
-                }
+        stage('Git clone') {
+            steps {
+                gv.gitClone()
             }
         }
-        stage('Maven build'){
-            steps{
-                script{
-                    gv.mavenBuild()
-                } 
+        stage('Maven test') {
+            steps {
+                gv.mavenTest()
             }
-        }   
-        stage('Create Dockerimage'){
-            steps{ 
-                script{
-                    gv.createDockerimage()
-                }   
+        }
+        stage('Maven build') {
+            steps {
+                gv.mavenBuild()
             }
-        } 
-        stage('Run container'){
-            steps{ 
-                script{
-                    gv.runContainer()
-                }  
+        }
+        stage('Create Dockerimage') {
+            steps {
+                gv.createDockerimage()
             }
-        } 
+        }
+        stage('Run container') {
+            steps {
+                gv.runContainer()
+            }
+        }
     }
 }
 // def gv
@@ -54,10 +42,10 @@ pipeline{
 //     stages{
 //         stage('Git clone'){
 //             steps{
-//                 git 'https://github.com/shazforiot/HelloWorld-Springboot-App.git' 
+//                 git 'https://github.com/shazforiot/HelloWorld-Springboot-App.git'
 //                 echo "Cloning completed"
 //             }
-//         }  
+//         }
 //         stage('Maven test'){
 //             steps{
 //                 sh 'mvn test'
@@ -75,12 +63,12 @@ pipeline{
 //                 sh 'docker build -t thetips4you/springboot:latest .'
 //                 echo "Building Dockerimage completed"
 //             }
-//         } 
+//         }
 //         stage('Run container'){
 //             steps{
-//                 sh 'docker run -d thetips4you/springboot' 
+//                 sh 'docker run -d thetips4you/springboot'
 //                 echo "Running an image inside of a container"
 //             }
-//         } 
+//         }
 //     }
 // }
