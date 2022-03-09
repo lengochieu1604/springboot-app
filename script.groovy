@@ -17,6 +17,7 @@ def createDockerimage(){
 }
 def runContainer(){ 
     sh 'docker run -d thetips4you/springboot' 
-    echo "Running an image inside of a container"       
+    echo "Running an image inside of a container."       
 }
 return this
+
