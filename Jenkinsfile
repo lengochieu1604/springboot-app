@@ -1,4 +1,4 @@
-def dv
+def gv
 
 pipeline{
     agent any
