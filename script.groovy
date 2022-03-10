@@ -9,15 +9,6 @@ def mavenTest(){
 def mavenBuild(){
     sh 'mvn package'
     echo "Building completed"
-}
-def createDockerimage(){
-    sh 'docker build -t thetips4you/springboot:latest .'
-    echo "Building Dockerimage completed"
-            
-}
-def runContainer(){ 
-    sh 'docker run  thetips4you/springboot' 
-    echo "Running an image inside of a container."       
-}
+} 
 return this
 
