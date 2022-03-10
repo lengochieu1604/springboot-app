@@ -31,20 +31,6 @@ pipeline {
                 }
             }
         }
-        stage('Create Dockerimage') {
-            steps {
-                script {
-                    gv.createDockerimage()
-                }
-            }
-        }
-        stage('Run container') {
-            steps {
-                script {
-                    gv.runContainer()
-                }
-            }
-        }
     }
 }
 // def gv
